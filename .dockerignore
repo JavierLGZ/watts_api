@@ -1,0 +1,14 @@
+__pycache__/
+[0-9]*.py
+
+# docker & git files
+Dockerfile
+docker-compose.yml
+.dockerignore
+.git
+.gitignore
+.pre-commit-config.yaml
+
+# database
+*.db
+*.sqlite3

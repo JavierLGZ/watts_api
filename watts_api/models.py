@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class WattConsume(models.Model):
     active_energy = models.FloatField()
@@ -8,5 +9,3 @@ class WattConsume(models.Model):
 
     class Meta:
         ordering = ("meter_date",)
-    
-

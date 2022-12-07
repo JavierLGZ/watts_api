@@ -3,9 +3,10 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 from watts_api import views
 
+app_name = "watts_api"
+
 urlpatterns = [
-    path("total_consume/", views.WattConsumeList.as_view()),
-    path("daily_consume/", views.DailyWattConsume.as_view()),
+    path("", views.DailyWattConsume.as_view(), name="wattsdetail"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
