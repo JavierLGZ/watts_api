@@ -1,20 +1,26 @@
 import pandas
 import json
+from datetime import datetime, timedelta
 
-# Read excel document
-excel_data_df = pandas.read_excel('fixture.xlsx', sheet_name='sheet1')
 
-# Convert excel to string 
-# (define orientation of document in this case from up to down)
-thisisjson = excel_data_df.to_json(orient='records')
+def main():
+    excel_data_df = pandas.read_excel('fixture_excel.xlsx', sheet_name='Query result')
+    excel_to_json_string = excel_data_df.to_json(orient='records')
+    json_data = json.loads(excel_to_json_string)
+    load_data = []
 
-# Print out the result
-print('Excel Sheet to JSON:\n', thisisjson)
+    for data in json_data:
+        data["meter_date"] = datetime.fromtimestamp(data["meter_date"]//1000)
+        data["meter_date"] += timedelta(hours=5)
+        data["meter_date"] = data["meter_date"].isoformat()
+        data_structure = {
+            "model": "watts_api.wattconsume",
+            "fields": data
+        }
+        load_data.append(data_structure)
 
-# Make the string into a list to be able to input in to a JSON-file
-thisisjson_dict = json.loads(thisisjson)
+    with open('fixture.json', 'w') as json_file:
+        json.dump(load_data, json_file)
 
-# Define file to write to and 'w' for write option -> json.dump() 
-# defining the list to write from and file to write to
-with open('data.json', 'w') as json_file:
-    json.dump(thisisjson_dict, json_file)
+if __name__ == "__main__":
+    main()

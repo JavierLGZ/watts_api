@@ -4,12 +4,9 @@ from django.db import models
 class WattConsume(models.Model):
     active_energy = models.FloatField()
     meter_date = models.DateTimeField()
-    meter_id = models.IntegerField(unique=True)
+    meter_id = models.IntegerField()
 
     class Meta:
         ordering = ("meter_date",)
-    
-    def __str__(self) -> str:
-        return str(self.meter_id)
     
 

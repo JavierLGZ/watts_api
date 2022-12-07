@@ -10,3 +10,10 @@ class WattSerializer(serializers.ModelSerializer):
             "meter_date",
             "meter_id"
         )
+
+class OutputSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields =(
+            "meter_date",
+            "value"
+        )

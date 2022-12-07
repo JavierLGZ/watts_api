@@ -1,2 +1,6 @@
 venv/
 *.pyc
+db.sqlite3
+[0-9]*.py
+__pycache__/
+fixture.json
