@@ -62,6 +62,12 @@ iniciar el entorno virtual
   source venv/bin/activate
 ```
 
+isntalar las dependencias necesarias
+
+```bash
+  pip install -r requirements.txt
+```
+
 iniciar el proyecto
 
 ```bash
@@ -71,6 +77,8 @@ iniciar el proyecto
   python manage.py loadddata fixture.json
   python manage.py runserver
 ```
+
+en la direcion **127.0.0.1:8000/consume** se podran hacer las cosultas.
 
 detener el proyecto y el entorno virtual
 
