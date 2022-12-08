@@ -4,15 +4,16 @@ Es un Entrypoint diseñado para medir tu consumo neto de tu factura eléctrica.
 Tomando los datos que genera tu medidor inteligente podrás llevar al detalle cuánta electricidad utilizas a lo largo del día, a la semana o al mes.
 
 
-
-
 ## tecnologías Empleadas
-
 
 **Server:** Python: django, django REST framework
 
 **DataBases:** PostgresQL, Sqlite3
 
+## Caracteristicas incluidas
+
+- un despliegue por medio de docker-copose utilizando como base de  datos postgres
+- un revisor de estilo automatico integrado a git para antes de cada commit
 
 
 ## API Reference
@@ -112,7 +113,9 @@ Para iniciar el proyecto en docker y poder utilizar la base de datos de postgres
 
 Para el Despliegue se requiere tener instalado docker y docker-compose, en un entorno de windows estos dos componentes vienen incluidos en la aplicación de Docker Desktop así que solo con instalar esta ya es suficiente.
 
-Luego de eso nos ubicamos en la carpeta del proyecto y ejecutamos en siguiente comando;
+al ubicarnos en la carpeta del proyecto y en el archivo .env retiramos los comentarios de las variablesque requiere postgres para funcionar
+
+Luego de eso ejecutamos en siguiente comando;
 
 ```bash
   docker-compose up
