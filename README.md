@@ -12,7 +12,7 @@ Tomando los datos que genera tu medidor inteligente podrás llevar al detalle cu
 
 ## Caracteristicas incluidas
 
-- un despliegue por medio de docker-copose utilizando como base de  datos postgres
+- un despliegue por medio de docker-compose utilizando como base de  datos postgres
 - un revisor de estilo automatico integrado a git para antes de cada commit
 
 
